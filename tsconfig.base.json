@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@stevewitmanangular/ngnuggets/feat-shell": [
+        "libs/ngnuggets/feat-shell/src/index.ts"
+      ],
+      "@stevewitmanangular/shared/material": [
+        "libs/shared/material/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

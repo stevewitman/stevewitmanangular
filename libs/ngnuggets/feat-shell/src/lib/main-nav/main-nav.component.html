@@ -1,0 +1,77 @@
+<mat-toolbar class="main-toolbar">
+  <ng-container *ngIf="!drawer.opened">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+  </ng-container>
+  <ng-container *ngIf="drawer.opened">
+    <button
+      class="menu-close"
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
+    </button>
+  </ng-container>
+  <a [routerLink]="['/']">
+    <img src="./assets/images/ngnuggets-logo-toolbar-dark.png" class="ngnuggets-logo-toolbar">
+  </a>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    >
+    <mat-nav-list>
+      <a
+        mat-list-item
+        [routerLink]="['/']"
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><mat-icon class="icon">home</mat-icon
+        ><span class="menu-item">Home</span></a
+      >
+      <a
+        mat-list-item
+        [routerLink]="['/']"
+        (click)="onClickFilters()"
+        (click)="isHandset && !showFilters && drawer.close()"
+      >
+        <mat-icon class="icon">filter_alt</mat-icon>
+        <span class="menu-item">Filter By</span>
+        <mat-icon class="menu-expand">expand_more</mat-icon></a
+      >
+
+      <mat-nav-list class="sub-menu" *ngIf="showFilters" @staggerList>
+        <a mat-list-item><span class="menu-item">Hide Blogs</span></a>
+        <a mat-list-item><span class="menu-item">Hide Podcasts</span></a>
+        <a mat-list-item><span class="menu-item">Hide Releases</span></a>
+        <a mat-list-item><span class="menu-item">Hide Videos</span></a>
+      </mat-nav-list>
+
+      <hr />
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Main Content Area -->
+    <div
+      class="page-container"
+      [ngClass]="{ 'page-container-handset': isHandset }"
+      [@routeAnimations]="prepareRoute(outlet)"
+    >
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
