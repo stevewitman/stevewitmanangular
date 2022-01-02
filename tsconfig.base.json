@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@stevewitmanangular/ngnuggets/feat-home": [
+        "libs/ngnuggets/feat-home/src/index.ts"
+      ],
       "@stevewitmanangular/ngnuggets/feat-shell": [
         "libs/ngnuggets/feat-shell/src/index.ts"
       ],

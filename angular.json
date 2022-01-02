@@ -1,6 +1,32 @@
 {
   "version": 1,
   "projects": {
+    "ngnuggets-feat-home": {
+      "projectType": "library",
+      "root": "libs/ngnuggets/feat-home",
+      "sourceRoot": "libs/ngnuggets/feat-home/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ngnuggets/feat-home"],
+          "options": {
+            "jestConfig": "libs/ngnuggets/feat-home/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ngnuggets/feat-home/src/**/*.ts",
+              "libs/ngnuggets/feat-home/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "ngnuggets-feat-shell": {
       "projectType": "library",
       "root": "libs/ngnuggets/feat-shell",
@@ -93,7 +119,8 @@
               "browserTarget": "ngnuggetsdotcom:build:production"
             },
             "development": {
-              "browserTarget": "ngnuggetsdotcom:build:development"
+              "browserTarget": "ngnuggetsdotcom:build:development",
+              "port": 4200
             }
           },
           "defaultConfiguration": "development"
