@@ -1,0 +1,22 @@
+mat-toolbar {
+  padding-left: 12px;
+}
+
+.main-toolbar {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  height: 56px;
+  z-index: 10;
+  background: #252525;
+  color: white;
+  a {
+    text-decoration: none;
+  }
+}
+
+.ngnuggets-logo-toolbar {
+  padding-top: 8px;
+  width: 44px;
+}
+

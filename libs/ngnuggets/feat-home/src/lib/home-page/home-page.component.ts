@@ -4,7 +4,7 @@ import { posts } from './posts';
 
 
 @Component({
-  selector: 'stevewitmanangular-home-page',
+  selector: 'ngnuggets-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

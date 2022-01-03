@@ -21,7 +21,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
-  selector: 'stevewitmanangular-main-nav',
+  selector: 'ngnuggets-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

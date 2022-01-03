@@ -1,11 +1,186 @@
 {
   "version": 1,
   "projects": {
+    "admin-ngnuggets-feat-home": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/feat-home",
+      "sourceRoot": "libs/admin-ngnuggets/feat-home/src",
+      "prefix": "admin-ngnuggets",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/admin-ngnuggets/feat-home"],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/feat-home/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/feat-home/src/**/*.ts",
+              "libs/admin-ngnuggets/feat-home/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "admin-ngnuggets-feat-shell": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/feat-shell",
+      "sourceRoot": "libs/admin-ngnuggets/feat-shell/src",
+      "prefix": "ngnuggets",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/admin-ngnuggets/feat-shell"],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/feat-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/feat-shell/src/**/*.ts",
+              "libs/admin-ngnuggets/feat-shell/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "admin-ngnuggetsdotcom": {
+      "projectType": "application",
+      "root": "apps/admin-ngnuggetsdotcom",
+      "sourceRoot": "apps/admin-ngnuggetsdotcom/src",
+      "prefix": "admin-ngnuggets",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/admin-ngnuggetsdotcom",
+            "index": "apps/admin-ngnuggetsdotcom/src/index.html",
+            "main": "apps/admin-ngnuggetsdotcom/src/main.ts",
+            "polyfills": "apps/admin-ngnuggetsdotcom/src/polyfills.ts",
+            "tsConfig": "apps/admin-ngnuggetsdotcom/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/admin-ngnuggetsdotcom/src/favicon.ico",
+              "apps/admin-ngnuggetsdotcom/src/assets"
+            ],
+            "styles": ["apps/admin-ngnuggetsdotcom/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin-ngnuggetsdotcom/src/environments/environment.ts",
+                  "with": "apps/admin-ngnuggetsdotcom/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "admin-ngnuggetsdotcom:build:production"
+            },
+            "development": {
+              "browserTarget": "admin-ngnuggetsdotcom:build:development",
+              "port": 4201
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin-ngnuggetsdotcom:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/admin-ngnuggetsdotcom/src/**/*.ts",
+              "apps/admin-ngnuggetsdotcom/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/admin-ngnuggetsdotcom"],
+          "options": {
+            "jestConfig": "apps/admin-ngnuggetsdotcom/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "admin-ngnuggetsdotcom-e2e": {
+      "root": "apps/admin-ngnuggetsdotcom-e2e",
+      "sourceRoot": "apps/admin-ngnuggetsdotcom-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/admin-ngnuggetsdotcom-e2e/cypress.json",
+            "devServerTarget": "admin-ngnuggetsdotcom:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "admin-ngnuggetsdotcom:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/admin-ngnuggetsdotcom-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["admin-ngnuggetsdotcom"]
+    },
     "ngnuggets-feat-home": {
       "projectType": "library",
       "root": "libs/ngnuggets/feat-home",
       "sourceRoot": "libs/ngnuggets/feat-home/src",
-      "prefix": "stevewitmanangular",
+      "prefix": "ngnuggets",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -31,7 +206,7 @@
       "projectType": "library",
       "root": "libs/ngnuggets/feat-shell",
       "sourceRoot": "libs/ngnuggets/feat-shell/src",
-      "prefix": "stevewitmanangular",
+      "prefix": "ngnuggets",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -57,7 +232,7 @@
       "projectType": "application",
       "root": "apps/ngnuggetsdotcom",
       "sourceRoot": "apps/ngnuggetsdotcom/src",
-      "prefix": "stevewitmanangular",
+      "prefix": "ngnuggets",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -183,7 +358,7 @@
       "projectType": "library",
       "root": "libs/shared/material",
       "sourceRoot": "libs/shared/material/src",
-      "prefix": "stevewitmanangular",
+      "prefix": "shared-stevewitmanangular",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
