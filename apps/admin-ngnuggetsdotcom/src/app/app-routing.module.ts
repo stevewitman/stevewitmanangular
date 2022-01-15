@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from '@stevewitmanangular/admin-ngnuggets/feat-home';
+import { AdminNgnuggetsFeatPostsModule } from '@stevewitmanangular/admin-ngnuggets/feat-posts';
 
 const routes: Routes = [
   {
@@ -9,6 +10,13 @@ const routes: Routes = [
     component: HomePageComponent,
     data: {
       title: 'Admin-ngNuggets - Home',
+    },
+  },
+  {
+    path: 'posts',
+    loadChildren: () => AdminNgnuggetsFeatPostsModule,
+    data: {
+      title: 'Admin-ngNuggets - Posts',
     },
   },
 ];

@@ -27,6 +27,32 @@
       },
       "tags": []
     },
+    "admin-ngnuggets-feat-posts": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/feat-posts",
+      "sourceRoot": "libs/admin-ngnuggets/feat-posts/src",
+      "prefix": "admin-ngnuggets",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/admin-ngnuggets/feat-posts"],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/feat-posts/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/feat-posts/src/**/*.ts",
+              "libs/admin-ngnuggets/feat-posts/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "admin-ngnuggets-feat-shell": {
       "projectType": "library",
       "root": "libs/admin-ngnuggets/feat-shell",
@@ -73,7 +99,10 @@
               "apps/admin-ngnuggetsdotcom/src/favicon.ico",
               "apps/admin-ngnuggetsdotcom/src/assets"
             ],
-            "styles": ["apps/admin-ngnuggetsdotcom/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/admin-ngnuggetsdotcom/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {

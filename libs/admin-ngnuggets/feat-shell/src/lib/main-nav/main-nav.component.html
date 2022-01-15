@@ -1,7 +1,71 @@
-<mat-toolbar class="main-toolbar">
-  <a [routerLink]="['/']">
-    <img src="./assets/images/ngnuggets-logo-toolbar-dark.png" class="ngnuggets-logo-toolbar">
+<!-- PRIMARY NAVIGATION DESKTOP -->
+<mat-toolbar class="main-toolbar" *ngIf="(isHandset$ | async) === false">
+  <!-- LOGO -->
+  <div>
+    <span [routerLink]="['/']">
+      <img
+        src="./assets/images/ngnuggets-logo-toolbar-dark.png"
+        class="ngnuggets-logo-toolbar"
+      />
+      <span class="admin-text">Dashboard</span>
+    </span>
+  </div>
+
+  <!-- NAV BUTTONS -->
+  <div>
+    <button
+      *ngFor="let item of mainNavItems"
+      mat-button
+      [routerLink]="[item.path]"
+      class="toolbar-buttons"
+      
+    >
+      <!-- <span [matBadge]="item.alerts">
+        {{ item.name | uppercase }}
+      </span> -->
+    </button>
+  </div>
+
+  <!-- LOGIN -->
+  <div>
+    <mat-icon>person</mat-icon>
+  </div>
+</mat-toolbar>
+
+<!-- PRIMARY NAVIGATION MOBILE -->
+
+<mat-toolbar
+  class="main-toolbar"
+  *ngIf="(isHandset$ | async) === true"
+  widthGrow
+>
+  <mat-icon [matMenuTriggerFor]="mainMenuMobile">menu</mat-icon>
+
+  <!-- LOGO -->
+  <a>
+    <img
+      src="./assets/images/ngnuggets-logo-toolbar-dark.png"
+      class="ngnuggets-logo-toolbar"
+    />
+    <span class="admin-text">Dashboard</span>
   </a>
+
+  <!-- NAV BUTTONS -->
+  <mat-menu #mainMenuMobile="matMenu" class="app-main-menu-mobile">
+    <button
+      *ngFor="let item of mainNavItems"
+      mat-menu-item
+      [routerLink]="[item.path]"
+      class="toolbar-buttons"
+    >
+      <!-- <span [matBadge]="item.alerts">
+        {{ item.name | uppercase }}
+      </span> -->
+    </button>
+  </mat-menu>
+
+  <!-- LOGIN -->
+  <mat-icon>person</mat-icon>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
