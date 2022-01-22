@@ -7,7 +7,7 @@ mat-toolbar {
 
 .mat-menu-item {
   background-color: #252525;
-  color: white;
+  color: #FFF;
 }
 
 .main-toolbar {
@@ -17,7 +17,7 @@ mat-toolbar {
   height: 56px;
   z-index: 10;
   background: #252525;
-  color: white;
+  color: #EEE;
   a {
     text-decoration: none;
   }
@@ -42,8 +42,11 @@ mat-toolbar {
   left: -12px;
   padding-right: 20px;
 }
-span.mat-badge-content{
-  top: 5px !important;
-  right: -15px !important;
-  background-color: var(--color-orange500);
-} 
+
+// span.mat-badge-content{
+//   top: 5px !important;
+//   right: -15px !important;
+//   background-color: var(--color-orange500);
+// } 
+
+

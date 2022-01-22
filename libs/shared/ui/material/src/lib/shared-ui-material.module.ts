@@ -28,4 +28,4 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTooltipModule,
   ],
 })
-export class SharedMaterialModule {}
+export class SharedUiMaterialModule {}

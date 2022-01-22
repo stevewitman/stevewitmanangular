@@ -30,8 +30,14 @@
       "@stevewitmanangular/ngnuggets/feat-shell": [
         "libs/ngnuggets/feat-shell/src/index.ts"
       ],
-      "@stevewitmanangular/shared/material": [
-        "libs/shared/material/src/index.ts"
+      "@stevewitmanangular/shared/data-access/auth": [
+        "libs/shared/data-access/auth/src/index.ts"
+      ],
+      "@stevewitmanangular/shared/ui/auth-status": [
+        "libs/shared/ui/auth-status/src/index.ts"
+      ],
+      "@stevewitmanangular/shared/ui/material": [
+        "libs/shared/ui/material/src/index.ts"
       ]
     }
   },

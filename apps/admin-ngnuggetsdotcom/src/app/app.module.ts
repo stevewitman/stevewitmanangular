@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AdminNgnuggetsFeatShellModule } from '@stevewitmanangular/admin-ngnuggets/feat-shell';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 
-import { MatButtonModule } from '@angular/material/button';
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AdminNgnuggetsFeatShellModule } from '@stevewitmanangular/admin-ngnuggets/feat-shell';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,9 +18,10 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     AppRoutingModule,
     AdminNgnuggetsFeatShellModule,
-    MatButtonModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

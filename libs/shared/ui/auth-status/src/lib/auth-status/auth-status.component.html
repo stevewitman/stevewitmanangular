@@ -1,0 +1,29 @@
+<!-- SIGNED IN -->
+<div *ngIf="userAuthStatus$ | async">
+  <ng-container *ngIf="userAuthStatus$ | async">
+    <img [src]="(userAuthStatus$ | async)!.photoURL" (click)="onSignOut()">
+  </ng-container>
+</div>
+
+<!-- NOT SIGNED IN -->
+<div *ngIf="(userAuthStatus$ | async) === null">
+
+  <!-- DESKTOP -->
+  <ng-container *ngIf="(isHandset$ | async) === true"> 
+    <mat-icon (click)="onSignIn()" *ngIf="(userAuthStatus$ | async) === null"
+      class="handset-person-icon">person</mat-icon
+    >
+  </ng-container>
+
+  <!-- HANDSET -->
+  <ng-container *ngIf="(isHandset$ | async) === false"> 
+    <button
+      mat-raised-button
+      (click)="onSignIn()"
+      class="auth-buttons"
+    >Sign In</button>
+  </ng-container>
+
+
+
+</div>

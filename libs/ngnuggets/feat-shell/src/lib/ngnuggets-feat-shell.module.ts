@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MainNavComponent } from './main-nav/main-nav.component';
-import { SharedMaterialModule } from '@stevewitmanangular/shared/material';
+import { SharedUiMaterialModule } from '@stevewitmanangular/shared/ui/material';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, SharedMaterialModule],
+  imports: [CommonModule, RouterModule, SharedUiMaterialModule],
   declarations: [MainNavComponent],
   exports: [MainNavComponent],
 })

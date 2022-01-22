@@ -3,24 +3,22 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MainNavComponent } from './main-nav/main-nav.component';
-import { SharedMaterialModule } from '@stevewitmanangular/shared/material';
+import { SharedUiMaterialModule } from '@stevewitmanangular/shared/ui/material';
+import { SharedUiAuthStatusModule } from '@stevewitmanangular/shared/ui/auth-status';
 
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from '@angular/material/toolbar';
-
-
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    SharedMaterialModule,
+    SharedUiMaterialModule,
+    SharedUiAuthStatusModule,
     MatBadgeModule,
     MatDividerModule,
     MatMenuModule,
-    MatToolbarModule,
   ],
   declarations: [MainNavComponent],
   exports: [MainNavComponent],

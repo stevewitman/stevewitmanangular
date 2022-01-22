@@ -383,17 +383,17 @@
       "tags": [],
       "implicitDependencies": ["ngnuggetsdotcom"]
     },
-    "shared-material": {
+    "shared-data-access-auth": {
       "projectType": "library",
-      "root": "libs/shared/material",
-      "sourceRoot": "libs/shared/material/src",
-      "prefix": "shared-stevewitmanangular",
+      "root": "libs/shared/data-access/auth",
+      "sourceRoot": "libs/shared/data-access/auth/src",
+      "prefix": "stevewitmanangular",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/material"],
+          "outputs": ["coverage/libs/shared/data-access/auth"],
           "options": {
-            "jestConfig": "libs/shared/material/jest.config.js",
+            "jestConfig": "libs/shared/data-access/auth/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -401,8 +401,60 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/material/src/**/*.ts",
-              "libs/shared/material/src/**/*.html"
+              "libs/shared/data-access/auth/src/**/*.ts",
+              "libs/shared/data-access/auth/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-material": {
+      "projectType": "library",
+      "root": "libs/shared/ui/material",
+      "sourceRoot": "libs/shared/ui/material/src",
+      "prefix": "shared-stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/material"],
+          "options": {
+            "jestConfig": "libs/shared/ui/material/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/material/src/**/*.ts",
+              "libs/shared/ui/material/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-ui-auth": {
+      "projectType": "library",
+      "root": "libs/shared/ui/auth",
+      "sourceRoot": "libs/shared/ui/auth/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/auth"],
+          "options": {
+            "jestConfig": "libs/shared/ui/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/auth/src/**/*.ts",
+              "libs/shared/ui/auth/src/**/*.html"
             ]
           }
         }

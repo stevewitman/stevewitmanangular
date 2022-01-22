@@ -1,45 +1,7 @@
-<!-- PRIMARY NAVIGATION DESKTOP -->
-<mat-toolbar class="main-toolbar" *ngIf="(isHandset$ | async) === false">
-  <!-- LOGO -->
-  <div>
-    <span [routerLink]="['/']">
-      <img
-        src="./assets/images/ngnuggets-logo-toolbar-dark.png"
-        class="ngnuggets-logo-toolbar"
-      />
-      <span class="admin-text">Dashboard</span>
-    </span>
-  </div>
+<mat-toolbar class="main-toolbar" widthGrow>
 
-  <!-- NAV BUTTONS -->
-  <div>
-    <button
-      *ngFor="let item of mainNavItems"
-      mat-button
-      [routerLink]="[item.path]"
-      class="toolbar-buttons"
-      
-    >
-      <!-- <span [matBadge]="item.alerts">
-        {{ item.name | uppercase }}
-      </span> -->
-    </button>
-  </div>
-
-  <!-- LOGIN -->
-  <div>
-    <mat-icon>person</mat-icon>
-  </div>
-</mat-toolbar>
-
-<!-- PRIMARY NAVIGATION MOBILE -->
-
-<mat-toolbar
-  class="main-toolbar"
-  *ngIf="(isHandset$ | async) === true"
-  widthGrow
->
-  <mat-icon [matMenuTriggerFor]="mainMenuMobile">menu</mat-icon>
+  <!-- HAMBURGER -->
+  <mat-icon *ngIf="(isHandset$ | async)" [matMenuTriggerFor]="mainMenuMobile">menu</mat-icon>
 
   <!-- LOGO -->
   <a>
@@ -50,7 +12,29 @@
     <span class="admin-text">Dashboard</span>
   </a>
 
-  <!-- NAV BUTTONS -->
+  <!-- DESKTOP NAV BUTTONS -->
+  <div *ngIf="(isHandset$ | async) === false">
+    <button
+      *ngFor="let item of mainNavItems"
+      mat-button
+      [routerLink]="[item.path]"
+      class="toolbar-buttons"
+    >
+      <span [matBadge]="item.alerts" matBadgeColor="warn">
+        {{ item.name | uppercase }}
+      </span>
+    </button>
+  </div>
+
+  <!-- AUTH -->
+  <shared-auth-status
+    [isHandset$]="isHandset$"
+    [userAuthStatus$]="userAuthStatus$"
+    (signInWithGoogle)="signInWithGoogle()"
+    (signOutWithGoogle)="signOutWithGoogle()"
+  ></shared-auth-status>
+
+  <!-- MOBILE NAV BUTTONS -->
   <mat-menu #mainMenuMobile="matMenu" class="app-main-menu-mobile">
     <button
       *ngFor="let item of mainNavItems"
@@ -58,14 +42,11 @@
       [routerLink]="[item.path]"
       class="toolbar-buttons"
     >
-      <!-- <span [matBadge]="item.alerts">
+      <span [matBadge]="item.alerts" matBadgeColor="warn">
         {{ item.name | uppercase }}
-      </span> -->
+      </span>
     </button>
   </mat-menu>
-
-  <!-- LOGIN -->
-  <mat-icon>person</mat-icon>
 </mat-toolbar>
-
+  
 <router-outlet></router-outlet>

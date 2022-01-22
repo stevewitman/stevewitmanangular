@@ -1,19 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { map, Observable, shareReplay } from 'rxjs';
+import { User } from '@angular/fire/auth';
+
+import { AuthService } from '@stevewitmanangular/shared/data-access/auth';
+import { map, Observable, of, shareReplay } from 'rxjs';
 
 @Component({
   selector: 'admin-ngnuggets-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.scss'],
 })
-export class MainNavComponent {
+export class MainNavComponent implements OnInit {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
       map((result) => result.matches),
       shareReplay()
     );
+  userAuthStatus$: Observable<User | null> = of(null);
+
+  // isLoggedIn$: Observable<any> | null = of(null);
 
   mainNavItems = [
     { name: 'home', path: '' },
@@ -25,9 +31,24 @@ export class MainNavComponent {
     { name: 'users', path: 'users' },
   ];
 
-  // { name: 'authors', path: 'authors'}
-  // { name: 'speakers', path: 'speakers'}
-  // { name: 'tags', path: 'tags'}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private authService: AuthService
+  ) {}
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  ngOnInit() {
+    this.userAuthStatus$ = this.authService.getUserAuthState();
+    this.userAuthStatus$.subscribe(res => {
+      console.log('[MainNav Component] ngOnInit ... userAuthStatus$:', res);
+    })
+    console.log('main nav component - ngOnInit');
+  }
+
+  signInWithGoogle() {
+    this.authService.signInWithGoogle();
+  }
+  
+  signOutWithGoogle() {
+    this.authService.signOutWithGoogle();
+  }
 } 
