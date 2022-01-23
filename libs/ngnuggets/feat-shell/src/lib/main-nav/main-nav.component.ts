@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   AfterViewInit,
   ChangeDetectorRef,
+  OnDestroy,
 } from '@angular/core';
 import {
   animate,
@@ -17,8 +18,11 @@ import {
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
-import { Observable } from 'rxjs';
+import { User } from '@angular/fire/auth';
+import { Observable, of, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+
+import { AuthService } from '@stevewitmanangular/shared/data-access/auth';
 
 @Component({
   selector: 'ngnuggets-main-nav',
@@ -71,13 +75,15 @@ import { map, shareReplay } from 'rxjs/operators';
     ]),
   ],
 })
-export class MainNavComponent implements OnInit, AfterViewInit {
+export class MainNavComponent implements OnInit, AfterViewInit, OnDestroy {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.XSmall)
     .pipe(
       map((result) => result.matches),
       shareReplay()
     );
+  userAuthStatus$: Observable<User | null> = of(null);
+  isHandsetSubscription$: Subscription| null = null;
 
   isHandset!: boolean;
 
@@ -86,7 +92,8 @@ export class MainNavComponent implements OnInit, AfterViewInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private router: Router,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private authService: AuthService
   ) {
     router.events.subscribe((e) => {
       if (e instanceof NavigationEnd && location.pathname == '/') {
@@ -99,23 +106,40 @@ export class MainNavComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.isHandset$.subscribe((value) => {
+    // TODO handle subscription
+    this.isHandsetSubscription$ = this.isHandset$.subscribe((value) => {
       this.isHandset = value;
     });
+    this.userAuthStatus$ = this.authService.getUserAuthState();
   }
 
   ngAfterViewInit() {
-    //
     this.changeDetectorRef.detectChanges();
+  }
+
+  ngOnDestroy() {
+    if (this.isHandsetSubscription$)  {
+      this.isHandsetSubscription$.unsubscribe();
+    }
   }
 
   prepareRoute(outlet: RouterOutlet) {
     return (
-      outlet && outlet.activatedRouteData && outlet.activatedRouteData['position']
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData['position']
     );
   }
 
   onClickFilters() {
     this.showFilters = !this.showFilters;
+  }
+
+  signInWithGoogle() {
+    this.authService.signInWithGoogle();
+  }
+
+  signOutWithGoogle() {
+    this.authService.signOutWithGoogle();
   }
 }

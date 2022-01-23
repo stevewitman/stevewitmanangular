@@ -4,9 +4,15 @@ import { RouterModule } from '@angular/router';
 
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { SharedUiMaterialModule } from '@stevewitmanangular/shared/ui/material';
+import { SharedUiAuthStatusModule } from '@stevewitmanangular/shared/ui/auth-status';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, SharedUiMaterialModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    SharedUiMaterialModule,
+    SharedUiAuthStatusModule,
+  ],
   declarations: [MainNavComponent],
   exports: [MainNavComponent],
 })

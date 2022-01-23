@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
 
-
 import {
   Auth,
   User,
@@ -25,10 +24,6 @@ export class AuthService {
     private firestore: Firestore
   ) {
     this.userAuthState$ = authState(this.auth);
-
-    this.userAuthState$.subscribe((res) => {
-      console.log('[AUTH SERV] NEW AUTH STATE:', res);
-    });
   }
 
   getUserAuthState() {
@@ -40,27 +35,23 @@ export class AuthService {
     const googleAuth = getAuth();
     await signInWithPopup(googleAuth, googleAuthProvider)
       .then((result) => {
-          return this.updateUserData(result.user);
+        return this.updateUserData(result.user);
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        console.log('[AUTH SERV] ERROR WHILE SIGNING IN');
-        console.log('[AUTH SERV] ERROR CODE:', errorCode);
-        console.log('[AUTH SERV] ERROR MESSAGE:', errorMessage);
-        console.log('[AUTH SERV] ERROR EMAIL:', email);
-        console.log('[AUTH SERV] ERROR CREDENTIAL:', credential);
-      });
+      // .catch((error) => {
+      //   const errorCode = error.code;
+      //   const errorMessage = error.message;
+      //   const email = error.email;
+      //   const credential = GoogleAuthProvider.credentialFromError(error);
+      //   console.log('[AuthService] ERROR while signing in !!!');
+      //   console.log('[AuthService] ERROR code:', errorCode);
+      //   console.log('[AuthService] ERROR messagee:', errorMessage);
+      //   console.log('[AuthService] ERROR email:', email);
+      //   console.log('[AuthService] ERROR credential:', credential);
+      // });
   }
 
   updateUserData(user: User) {
     const userRef = doc(this.firestore, `users/${user.uid}`);
-    console.log('[AUTH SERV] UID:', user.uid);
-    console.log('[AUTH SERV] EMAIL:', user.email);
-    console.log('[AUTH SERV] NAME:', user.displayName);
-    console.log('[AUTH SERV] URL:', user.photoURL);
     const data = {
       uid: user.uid,
       email: user.email,
@@ -74,10 +65,10 @@ export class AuthService {
     const auth = getAuth();
     await signOut(auth)
       .then(() => {
-        // console.log('[AUTH SERV] SUCCESSFULLY SIGNED OUT');
+        // console.log('[AuthService] SUCCESSFULLY signed out');
       })
       .catch((error) => {
-        console.log('[AUTH SERV] ERROR WHILE SIGNING OUT');
+        console.log('[AuthService] ERROR while signing out', error);
       });
   }
 }

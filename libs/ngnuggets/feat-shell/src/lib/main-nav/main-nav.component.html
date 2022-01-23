@@ -23,6 +23,15 @@
   <a [routerLink]="['/']">
     <img src="./assets/images/ngnuggets-logo-toolbar-dark.png" class="ngnuggets-logo-toolbar">
   </a>
+  <span class="spacer"></span>
+
+    <!-- AUTH -->
+  <shared-auth-status
+    [isHandset$]="isHandset$"
+    [userAuthStatus$]="userAuthStatus$"
+    (signInWithGoogle)="signInWithGoogle()"
+    (signOutWithGoogle)="signOutWithGoogle()"
+  ></shared-auth-status>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav

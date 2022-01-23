@@ -1,8 +1,6 @@
 <!-- SIGNED IN -->
 <div *ngIf="userAuthStatus$ | async">
-  <ng-container *ngIf="userAuthStatus$ | async">
-    <img [src]="(userAuthStatus$ | async)!.photoURL" (click)="onSignOut()">
-  </ng-container>
+  <img [src]="(userAuthStatus$ | async)?.photoURL" (click)="onSignOut()">
 </div>
 
 <!-- NOT SIGNED IN -->

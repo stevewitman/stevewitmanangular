@@ -38,10 +38,6 @@ export class MainNavComponent implements OnInit {
 
   ngOnInit() {
     this.userAuthStatus$ = this.authService.getUserAuthState();
-    this.userAuthStatus$.subscribe(res => {
-      console.log('[MainNav Component] ngOnInit ... userAuthStatus$:', res);
-    })
-    console.log('main nav component - ngOnInit');
   }
 
   signInWithGoogle() {
