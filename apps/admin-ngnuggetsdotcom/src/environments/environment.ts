@@ -5,14 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    projectId: 'ngnuggetsdotcom-firebase',
-    appId: '1:800241353749:web:a65417880184b792977a1c',
-    storageBucket: 'ngnuggetsdotcom-firebase.appspot.com',
-    locationId: 'us-central',
-    apiKey: 'AIzaSyBhAu4JyzZQFkoG1bRyj6QmID_rfnZjpQk',
-    authDomain: 'ngnuggetsdotcom-firebase.firebaseapp.com',
-    messagingSenderId: '800241353749',
-    measurementId: 'G-L97Z1NBNQJ',
+    apiKey: 'AIzaSyCl-_u7OlH6NA3gp38bAY_SNu0i4D3HTRg',
+    authDomain: 'dev-ngnuggetsdotcom.firebaseapp.com',
+    projectId: 'dev-ngnuggetsdotcom',
+    storageBucket: 'dev-ngnuggetsdotcom.appspot.com',
+    messagingSenderId: '855516123328',
+    appId: '1:855516123328:web:6c2493f1f5aa39fbe65d25',
   },
 };
 
