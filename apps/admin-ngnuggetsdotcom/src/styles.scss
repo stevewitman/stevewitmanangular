@@ -44,3 +44,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   top: -6px;
   padding-top: 16px; 
 }
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: var(--color-turquoise100);;
+}

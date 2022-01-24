@@ -1,3 +1,14 @@
+  <mat-toolbar class="secondary-toolbar" widthGrow>
+    <div>
+      <button
+        *ngFor="let item of secondaryNavItems"
+        mat-button
+        class="toolbar-buttons"
+      >{{ item.name | uppercase}}
+      </button>
+    </div>
+  </mat-toolbar>
+  
 <div class="page-container-wide">
-  <p>posts-page works!</p>
+  <admin-ngnuggets-add-post></admin-ngnuggets-add-post>
 </div>

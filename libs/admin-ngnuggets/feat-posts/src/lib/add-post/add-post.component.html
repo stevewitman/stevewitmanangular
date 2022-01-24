@@ -1,3 +1,178 @@
-<div class="page-container-wide">
-  <p>add-post works!</p>
+<div class="component-container">
+  <div class="col-form">
+
+    <form class="example-form">
+      <div class="form-row">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Slug</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Type</mat-label>
+              <select matNativeControl>
+                <option value="" selected></option>
+                <option value="blog">Blog</option>
+                <option value="video">Video</option>
+                <option value="podcast">Podcast</option>
+                <option value="community">Community</option>
+                <option value="release">Release</option>
+              </select>
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Duration</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>PostedBy</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Url</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row form-row-tall">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width input-tall" appearance="fill">
+            <mat-label>Desscription</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>datePosted</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>dateCreated</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>imgUrl</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>sourceSite</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>sourceUrl</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Recent Posts By Source</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>authorName</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>authorUrl</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Recent Posts By Author</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Speakers</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Tags</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Visits</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Likes</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-cell">
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Newsletter</mat-label>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <div class="col-preview">
+    <div class="post">
+
+    </div>
+        <div class="post">
+      
+    </div>
+    <button mat-raised-button>Stage Post</button>
+  </div>
 </div>

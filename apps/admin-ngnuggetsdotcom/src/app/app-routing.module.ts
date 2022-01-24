@@ -9,14 +9,14 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     data: {
-      title: 'Admin-ngNuggets - Home',
+      title: 'a-ngn: Home',
     },
   },
   {
     path: 'posts',
     loadChildren: () => AdminNgnuggetsFeatPostsModule,
     data: {
-      title: 'Admin-ngNuggets - Posts',
+      title: 'a-ngn: Posts',
     },
   },
 ];

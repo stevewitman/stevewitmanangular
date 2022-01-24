@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 
-import { SharedUiMaterialModule } from '@stevewitmanangular/shared/ui/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
+
+import { SharedUiMaterialModule } from '@stevewitmanangular/shared/ui/material';
 import { AddPostComponent } from './add-post/add-post.component';
 import { PostsPageComponent } from './posts-page/posts-page.component';
 
@@ -24,6 +27,8 @@ export const adminNgnuggetsFeatPostsRoutes: Route[] = [
     CommonModule,
     RouterModule.forChild(adminNgnuggetsFeatPostsRoutes),
     SharedUiMaterialModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   declarations: [AddPostComponent, PostsPageComponent],
 })
