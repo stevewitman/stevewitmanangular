@@ -48,3 +48,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: var(--color-turquoise100);;
 }
+
+.mat-standard-chip {
+  min-height: 20px !important;
+  color: var(--color-orange500);
+}
+.mat-chip.mat-standard-chip {
+  background-color: var(--color-turquoise200);
+  color: var(--color-orange500);
+}
