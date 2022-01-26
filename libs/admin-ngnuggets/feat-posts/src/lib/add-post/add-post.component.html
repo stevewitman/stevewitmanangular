@@ -2,14 +2,15 @@
   <div class="col-form">
 
     <form class="example-form" [formGroup]="postForm">
+
       <div class="form-row">
-        <div class="form-cell">
+        <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Slug</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Type</mat-label>
               <select matNativeControl>
@@ -22,13 +23,21 @@
               </select>
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Duration</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
+          <div class="stacked-buttons">
+            <button mat-stroked-button class="half-height-button">
+              <mat-icon class="half-icon">arrow_drop_up</mat-icon>
+            </button>
+            <button mat-stroked-button class="half-height-button">
+              <mat-icon class="half-icon">arrow_drop_down</mat-icon>
+            </button>
+          </div>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>PostedBy</mat-label>
             <input matInput autocomplete="off">
@@ -46,7 +55,7 @@
       </div>
 
       <div class="form-row">
-        <div class="form-cell">
+        <div class="form-cell-4-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Title</mat-label>
             <input matInput autocomplete="off">
@@ -55,9 +64,9 @@
       </div>
 
       <div class="form-row form-row-tall">
-        <div class="form-cell">
+        <div class="form-cell-4-4">
           <mat-form-field class="input-full-width input-tall" appearance="fill">
-            <mat-label>Desscription</mat-label>
+            <mat-label>Description</mat-label>
             <textarea matInput></textarea>
           </mat-form-field>
         </div>
@@ -65,19 +74,27 @@
 
 
       <div class="form-row">
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>datePosted</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>dateCreated</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
+          <div class="full-buttons">
+            <button mat-stroked-button class="full-height-button">
+              <mat-icon class="full-height-icon">arrow_left</mat-icon>
+            </button>
+            <button mat-stroked-button class="full-height-button">
+              <mat-icon class="full-height-icon">arrow_right</mat-icon>
+            </button>
+          </div>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>imgUrl</mat-label>
             <input matInput autocomplete="off">
@@ -86,44 +103,54 @@
       </div>
 
       <div class="form-row">
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>sourceSite</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>sourceUrl</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Recent Posts By Source</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
+          <div class="full-buttons">
+            <button mat-stroked-button class="full-height-button">
+              <mat-icon class="full-height-icon">preview</mat-icon>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="form-row">
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>authorName</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>authorUrl</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Recent Posts By Author</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
+          <div class="full-buttons">
+            <button mat-stroked-button class="full-height-button">
+              <mat-icon class="full-height-icon">preview</mat-icon>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -133,6 +160,14 @@
             <mat-label>Speakers</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
+          <div class="full-buttons">
+            <button mat-stroked-button class="full-height-button">
+              <mat-icon class="full-height-icon">content_copy</mat-icon>
+            </button>
+            <button mat-stroked-button class="full-height-button">
+              <mat-icon class="full-height-icon">preview</mat-icon>
+            </button>
+          </div>
         </div>
         <div class="form-cell-2-3">
           <mat-form-field class="input-full-width" appearance="fill">
@@ -165,27 +200,27 @@
       </div>
 
       <div class="form-row">
-        <div class="form-cell">
+        <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Status</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Visits</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Likes</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
-        <div class="form-cell">
+        <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
-            <mat-label>Newsletter</mat-label>
+            <mat-label>Newsletter Status</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
         </div>
@@ -193,14 +228,17 @@
     </form>
 
   </div>
-
+<!-- RIGHT COLUMN -->
   <div class="col-preview">
-    <div class="post">
 
+    <div class="post">
     </div>
-        <div class="post">
-      
+
+    <div class="post"> 
     </div>
+
     <button mat-raised-button>Stage Post</button>
+
   </div>
+
 </div>
