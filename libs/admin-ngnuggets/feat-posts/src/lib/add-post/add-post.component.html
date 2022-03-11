@@ -99,6 +99,10 @@
             <mat-label>imgUrl</mat-label>
             <input matInput autocomplete="off">
           </mat-form-field>
+          <button mat-stroked-button class="full-height-button" (click)="hiddenFileInput.click()">
+            <mat-icon class="full-height-icon">upload</mat-icon>
+          </button>
+          <input type="file" hidden #hiddenFileInput (change)="uploadImage($event)" />
         </div>
       </div>
 
@@ -225,6 +229,8 @@
           </mat-form-field>
         </div>
       </div>
+
+
     </form>
 
   </div>

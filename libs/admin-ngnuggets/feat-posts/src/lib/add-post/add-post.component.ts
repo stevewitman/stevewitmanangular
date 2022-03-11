@@ -4,11 +4,14 @@ import {
   FormBuilder,
   FormControl,
 } from '@angular/forms';
+
+import { from, map, Observable, startWith, switchMap, tap } from 'rxjs';
+import { ref, Storage } from '@angular/fire//storage';
+
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { map, Observable, startWith } from 'rxjs';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-
+import { getDownloadURL, uploadBytes } from 'firebase/storage';
 export interface Tag {
   category: string;
   tag: string;
@@ -21,31 +24,26 @@ export interface Tag {
 })
 export class AddPostComponent implements OnInit {
   postForm!: FormGroup;
-
+  filePath!: string;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   tagsCtrl = new FormControl();
   filteredTags: Observable<string[]>;
   tags: string[] = [];
   allTags: string[] = [
     'AOT',
-    'Accessibility',
-    'Angular Elements',
-    'Angular 13',
     'Angular Universal',
     'Angular Workspace',
-    'Animations',
-    'Architecture',
-    'Attribute Binding',
-    'Builders',
     'CLI',
     'Change Detection',
     'Components',
     'Component Factory',
   ];
 
+  slug = '2022-01-28-B'
+
   @ViewChild('tagsInput') tagsInput?: ElementRef<HTMLInputElement>;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private storage: Storage) {
     this.filteredTags = this.tagsCtrl.valueChanges.pipe(
       startWith(''),
       map((tags) => (tags ? this._filterTags(tags) : this.tags.slice()))
@@ -61,6 +59,28 @@ export class AddPostComponent implements OnInit {
       tagsCtrl: [''],
     });
   }
+
+  uploadImage(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files?.length) {
+      const file = input.files[0];
+      console.log('FILE: ', file)
+      this.uploadImageService(file, `thumbnails/${this.slug}`);
+    } else {
+      return;
+    }
+  }
+
+  uploadImageService(image: File, path: string): Observable<string> {
+    const storageRef = ref(this.storage, path);
+    const uploadTask = from(uploadBytes(storageRef, image));
+    return uploadTask.pipe(
+      switchMap((result) => getDownloadURL(result.ref)),
+      tap(res => console.log('DownloadURL: ', res))
+    );
+  }
+
+
 
   tagAdd(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
@@ -82,7 +102,7 @@ export class AddPostComponent implements OnInit {
     this.tags.push(event.option.viewValue);
     if (this.tagsInput) {
       this.tagsInput.nativeElement.value = '';
-    } 
+    }
     this.tagsCtrl.setValue(null);
   }
 

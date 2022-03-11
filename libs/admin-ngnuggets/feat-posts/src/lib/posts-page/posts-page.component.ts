@@ -15,4 +15,9 @@ export class PostsPageComponent {
     { name: 'Tags', path: 'add-post' },
   ];
 
+  images = [
+    'https://dev-ngnuggetsdotcom.appspot.com/2022-01-18-A.jpg',
+    'gs://dev-ngnuggetsdotcom.appspot.com/2022-01-18-B.jpg',
+    'gs://dev-ngnuggetsdotcom.appspot.com/2022-01-18-C.jpg',
+  ];
 }

@@ -25,7 +25,7 @@ export class MainNavComponent implements OnInit {
     { name: 'home', path: '' },
     { name: 'posts', path: 'posts' },
     { name: 'newsletter', path: 'posts', alerts: 2 },
-    { name: 'sponsors', path: 'sponsors' },
+    { name: 'sponsors', path: 'sponsors' }, 
     { name: 'donations', path: 'donations', alerts: 1 },
     { name: 'messages', path: 'messages' },
     { name: 'users', path: 'users' },
