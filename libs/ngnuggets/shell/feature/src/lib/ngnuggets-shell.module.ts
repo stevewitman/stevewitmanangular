@@ -16,4 +16,4 @@ import { SharedUiAuthStatusModule } from '@stevewitmanangular/shared/ui/auth-sta
   declarations: [MainNavComponent],
   exports: [MainNavComponent],
 })
-export class NgnuggetsFeatShellModule {}
+export class NgnuggetsShellModule {}

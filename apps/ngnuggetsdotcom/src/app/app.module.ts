@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgnuggetsFeatShellModule } from '@stevewitmanangular/ngnuggets/feat-shell';
+import { NgnuggetsShellModule } from '@stevewitmanangular/ngnuggets/shell';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +17,7 @@ import { NgnuggetsFeatShellModule } from '@stevewitmanangular/ngnuggets/feat-she
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgnuggetsFeatShellModule,
+    NgnuggetsShellModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),

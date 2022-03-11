@@ -24,11 +24,11 @@
       "@stevewitmanangular/admin-ngnuggets/feat-shell": [
         "libs/admin-ngnuggets/feat-shell/src/index.ts"
       ],
-      "@stevewitmanangular/ngnuggets/feat-home": [
-        "libs/ngnuggets/feat-home/src/index.ts"
-      ],
-      "@stevewitmanangular/ngnuggets/feat-shell": [
-        "libs/ngnuggets/feat-shell/src/index.ts"
+      "@stevewitmanangular/ngnuggets/home": [
+        "libs/ngnuggets/home/feature/src/index.ts"
+      ],  
+      "@stevewitmanangular/ngnuggets/shell": [
+        "libs/ngnuggets/shell/feature/src/index.ts"
       ],
       "@stevewitmanangular/shared/data-access/auth": [
         "libs/shared/data-access/auth/src/index.ts"

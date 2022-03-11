@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { HomePageComponent } from '@stevewitmanangular/ngnuggets/feat-home';
+import { HomePageComponent } from '@stevewitmanangular/ngnuggets/home';
 
 const routes: Routes = [
   {
