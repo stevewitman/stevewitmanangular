@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 
-export const ngnuggetsFeatHomeRoutes: Route[] = [
+export const ngnuggetsHomeRoutes: Route[] = [
   {
     path: '',
     component: HomePageComponent,
@@ -19,4 +19,4 @@ export const ngnuggetsFeatHomeRoutes: Route[] = [
     HomePageComponent
   ],
 })
-export class NgnuggetsFeatHomeModule {}
+export class NgnuggetsHomeModule {}

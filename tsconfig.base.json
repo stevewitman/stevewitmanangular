@@ -15,18 +15,18 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@stevewitmanangular/admin-ngnuggets/home": [
-        "libs/admin-ngnuggets/home/feature/src/index.ts"
-      ],
-      "@stevewitmanangular/admin-ngnuggets/feat-posts": [
-        "libs/admin-ngnuggets/feat-posts/src/index.ts"
-      ],
       "@stevewitmanangular/admin-ngnuggets/feat-shell": [
         "libs/admin-ngnuggets/feat-shell/src/index.ts"
       ],
+      "@stevewitmanangular/admin-ngnuggets/home": [
+        "libs/admin-ngnuggets/home/feature/src/index.ts"
+      ],
+      "@stevewitmanangular/admin-ngnuggets/posts/feature/add-post": [
+        "libs/admin-ngnuggets/posts/feature/add-post/src/index.ts"
+      ],
       "@stevewitmanangular/ngnuggets/home": [
         "libs/ngnuggets/home/feature/src/index.ts"
-      ],  
+      ],
       "@stevewitmanangular/ngnuggets/shell": [
         "libs/ngnuggets/shell/feature/src/index.ts"
       ],

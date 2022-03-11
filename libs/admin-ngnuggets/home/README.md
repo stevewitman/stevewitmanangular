@@ -1,7 +1,7 @@
-# admin-ngnuggets-feat-home
+# admin-ngnuggets-home
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Running unit tests
 
-Run `nx test admin-ngnuggets-feat-home` to execute the unit tests.
+Run `nx test admin-ngnuggets-home` to execute the unit tests.

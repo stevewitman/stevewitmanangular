@@ -1,10 +1,10 @@
 import { async, TestBed } from '@angular/core/testing';
-import { NgnuggetsFeatHomeModule } from './ngnuggets-feat-home.module';
+import { NgnuggetsHomeModule } from './ngnuggets-home.module';
 
-describe('NgnuggetsFeatHomeModule', () => {
+describe('NgnuggetsHomeModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgnuggetsFeatHomeModule],
+      imports: [NgnuggetsHomeModule],
     }).compileComponents();
   }));
 
@@ -13,6 +13,6 @@ describe('NgnuggetsFeatHomeModule', () => {
   // NB: This particular test does not do anything useful.
   //     It does NOT check for correct instantiation of the module.
   it('should have a module definition', () => {
-    expect(NgnuggetsFeatHomeModule).toBeDefined();
+    expect(NgnuggetsHomeModule).toBeDefined();
   });
 });

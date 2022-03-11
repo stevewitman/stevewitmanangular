@@ -10,16 +10,13 @@ import { MatInputModule } from '@angular/material/input';
 // import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 
-
 import { SharedUiMaterialModule } from '@stevewitmanangular/shared/ui/material';
-import { AddPostComponent } from './add-post/add-post.component';
-import { PostsPageComponent } from './posts-page/posts-page.component';
+import { AddPostComponent } from './add-post.component';
 
-// export const adminNgnuggetsFeatPostsRoutes: Route[] = [
-export const adminNgnuggetsFeatPostsRoutes: Route[] = [
+export const adminNgnuggetsPostsRoutes: Route[] = [
   {
     path: '',
-    component: PostsPageComponent,
+    component: AddPostComponent,
   },
   {
     path: 'add-post',
@@ -30,7 +27,7 @@ export const adminNgnuggetsFeatPostsRoutes: Route[] = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(adminNgnuggetsFeatPostsRoutes),
+    RouterModule.forChild(adminNgnuggetsPostsRoutes),
     FormsModule,
     ReactiveFormsModule,
     SharedUiMaterialModule,
@@ -40,7 +37,7 @@ export const adminNgnuggetsFeatPostsRoutes: Route[] = [
     MatInputModule,
     AngularFireStorageModule,
   ],
-  declarations: [AddPostComponent, PostsPageComponent],
+  declarations: [AddPostComponent],
   providers: [{ provide: BUCKET, useValue: 'dev-ngnuggetsdotcom.appspot.com' }],
 })
-export class AdminNgnuggetsFeatPostsModule {}
+export class AddPostModule {}

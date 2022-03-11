@@ -1,61 +1,7 @@
 {
-  "cli": {
-    "analytics": false
-  },
   "version": 1,
   "projects": {
-    "admin-ngnuggets-feat-home": {
-      "projectType": "library",
-      "root": "libs/admin-ngnuggets/feat-home",
-      "sourceRoot": "libs/admin-ngnuggets/feat-home/src",
-      "prefix": "admin-ngnuggets",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/admin-ngnuggets/feat-home"],
-          "options": {
-            "jestConfig": "libs/admin-ngnuggets/feat-home/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/admin-ngnuggets/feat-home/src/**/*.ts",
-              "libs/admin-ngnuggets/feat-home/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": []
-    },
-    "admin-ngnuggets-feat-posts": {
-      "projectType": "library",
-      "root": "libs/admin-ngnuggets/feat-posts",
-      "sourceRoot": "libs/admin-ngnuggets/feat-posts/src",
-      "prefix": "admin-ngnuggets",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/admin-ngnuggets/feat-posts"],
-          "options": {
-            "jestConfig": "libs/admin-ngnuggets/feat-posts/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/admin-ngnuggets/feat-posts/src/**/*.ts",
-              "libs/admin-ngnuggets/feat-posts/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": []
-    },
+
     "admin-ngnuggets-feat-shell": {
       "projectType": "library",
       "root": "libs/admin-ngnuggets/feat-shell",
@@ -76,6 +22,32 @@
             "lintFilePatterns": [
               "libs/admin-ngnuggets/feat-shell/src/**/*.ts",
               "libs/admin-ngnuggets/feat-shell/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "admin-ngnuggets-posts-feature-add-post": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/posts/feature/add-post",
+      "sourceRoot": "libs/admin-ngnuggets/posts/feature/add-post/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/admin-ngnuggets/posts/feature/add-post"],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/posts/feature/add-post/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/posts/feature/add-post/src/**/*.ts",
+              "libs/admin-ngnuggets/posts/feature/add-post/src/**/*.html"
             ]
           }
         }
@@ -207,32 +179,6 @@
       },
       "tags": [],
       "implicitDependencies": ["admin-ngnuggetsdotcom"]
-    },
-    "ngnuggets-feat-home": {
-      "projectType": "library",
-      "root": "libs/ngnuggets/feat-home",
-      "sourceRoot": "libs/ngnuggets/feat-home/src",
-      "prefix": "ngnuggets",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ngnuggets/feat-home"],
-          "options": {
-            "jestConfig": "libs/ngnuggets/feat-home/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ngnuggets/feat-home/src/**/*.ts",
-              "libs/ngnuggets/feat-home/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": []
     },
     "ngnuggets-feat-shell": {
       "projectType": "library",

@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from '@stevewitmanangular/admin-ngnuggets/home';
-import { AdminNgnuggetsFeatPostsModule } from '@stevewitmanangular/admin-ngnuggets/feat-posts';
+import { AddPostModule } from '@stevewitmanangular/admin-ngnuggets/posts/feature/add-post';
 
 const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
     data: {
-      title: 'a-ngn: Home',
+      title: 'A-ngNug: Home',
     },
   },
   {
     path: 'posts',
-    loadChildren: () => AdminNgnuggetsFeatPostsModule,
+    loadChildren: () => AddPostModule,
     data: {
-      title: 'a-ngn: Posts',
+      title: 'A-ngNug: Posts',
     },
   },
 ];

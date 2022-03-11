@@ -1,9 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 import { from, map, Observable, startWith, switchMap, tap } from 'rxjs';
 import { ref, Storage } from '@angular/fire//storage';
@@ -39,7 +35,7 @@ export class AddPostComponent implements OnInit {
     'Component Factory',
   ];
 
-  slug = '2022-01-28-B'
+  slug = '2022-01-28-B';
 
   @ViewChild('tagsInput') tagsInput?: ElementRef<HTMLInputElement>;
 
@@ -64,7 +60,7 @@ export class AddPostComponent implements OnInit {
     const input = event.target as HTMLInputElement;
     if (input.files?.length) {
       const file = input.files[0];
-      console.log('FILE: ', file)
+      console.log('FILE: ', file);
       this.uploadImageService(file, `thumbnails/${this.slug}`);
     } else {
       return;
@@ -76,11 +72,9 @@ export class AddPostComponent implements OnInit {
     const uploadTask = from(uploadBytes(storageRef, image));
     return uploadTask.pipe(
       switchMap((result) => getDownloadURL(result.ref)),
-      tap(res => console.log('DownloadURL: ', res))
+      tap((res) => console.log('DownloadURL: ', res))
     );
   }
-
-
 
   tagAdd(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();

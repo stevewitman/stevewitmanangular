@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'ngnuggets-feat-home',
+  displayName: 'ngnuggets-home',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/ngnuggets/feat-home',
+  coverageDirectory: '../../../coverage/libs/ngnuggets/home',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

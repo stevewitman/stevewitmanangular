@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'admin-ngnuggets-feat-posts',
-  preset: '../../../jest.preset.js',
+  displayName: 'admin-ngnuggets-posts-feature-add-post',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,8 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/admin-ngnuggets/feat-posts',
+  coverageDirectory:
+    '../../../../../coverage/libs/admin-ngnuggets/posts/feature/add-post',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
