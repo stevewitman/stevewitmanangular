@@ -1,32 +1,31 @@
 <div class="component-container">
   <div class="col-form">
-
     <form class="example-form" [formGroup]="postForm">
-
       <div class="form-row">
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Slug</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Type</mat-label>
-              <select matNativeControl>
-                <option value="" selected></option>
-                <option value="blog">Blog</option>
-                <option value="video">Video</option>
-                <option value="podcast">Podcast</option>
-                <option value="community">Community</option>
-                <option value="release">Release</option>
-              </select>
+            <mat-select formControlName="typeCtrl"  >
+              <mat-option>Select Type</mat-option>
+              <mat-option
+                *ngFor="let type of postTypes"
+                [value]="type.value"
+              >
+                {{ type.value | titlecase }}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Duration</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
           <div class="stacked-buttons">
             <button mat-stroked-button class="half-height-button">
@@ -40,7 +39,7 @@
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>PostedBy</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
       </div>
@@ -49,7 +48,12 @@
         <div class="form-cell-4-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Url</mat-label>
-            <input matInput autocomplete="off">
+            <input
+              matInput
+              autocomplete="off"
+              formControlName="postUrlCtrl"
+              (change)="onUrlChange()"
+            />
           </mat-form-field>
         </div>
       </div>
@@ -58,7 +62,7 @@
         <div class="form-cell-4-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Title</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
       </div>
@@ -72,18 +76,17 @@
         </div>
       </div>
 
-
       <div class="form-row">
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>datePosted</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>dateCreated</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
           <div class="full-buttons">
             <button mat-stroked-button class="full-height-button">
@@ -97,12 +100,21 @@
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>imgUrl</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
-          <button mat-stroked-button class="full-height-button" (click)="hiddenFileInput.click()">
+          <button
+            mat-stroked-button
+            class="full-height-button"
+            (click)="hiddenFileInput.click()"
+          >
             <mat-icon class="full-height-icon">upload</mat-icon>
           </button>
-          <input type="file" hidden #hiddenFileInput (change)="uploadImage($event)" />
+          <input
+            type="file"
+            hidden
+            #hiddenFileInput
+            (change)="uploadImage($event)"
+          />
         </div>
       </div>
 
@@ -110,19 +122,19 @@
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>sourceSite</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>sourceUrl</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Recent Posts By Source</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
           <div class="full-buttons">
             <button mat-stroked-button class="full-height-button">
@@ -136,19 +148,19 @@
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>authorName</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>authorUrl</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Recent Posts By Author</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
           <div class="full-buttons">
             <button mat-stroked-button class="full-height-button">
@@ -162,7 +174,7 @@
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Speakers</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
           <div class="full-buttons">
             <button mat-stroked-button class="full-height-button">
@@ -178,9 +190,10 @@
             <mat-label>Tags</mat-label>
             <mat-chip-list #chipList>
               <mat-chip
-                *ngFor="let tag of tags"
-                (removed)="tagRemove(tag)">
-                {{tag}}
+                *ngFor="let tag of tagsSelected"
+                (removed)="tagRemove(tag)"
+              >
+                {{ tag }}
                 <button matChipRemove>
                   <mat-icon>cancel</mat-icon>
                 </button>
@@ -191,60 +204,58 @@
                 [matAutocomplete]="auto"
                 [matChipInputFor]="chipList"
                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                (matChipInputTokenEnd)="tagAdd($event)">
+                (matChipInputTokenEnd)="tagAdd($event)"
+              />
             </mat-chip-list>
-            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="tagSelected($event)">
-              <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
-                {{tag}}
+            <mat-autocomplete
+              #auto="matAutocomplete"
+              (optionSelected)="tagSelected($event)"
+            >
+              <mat-option
+                *ngFor="let tag of tagsFiltered | async"
+                [value]="tag"
+              >
+                {{ tag }}
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
         </div>
-
       </div>
 
       <div class="form-row">
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Status</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Visits</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Likes</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Newsletter Status</mat-label>
-            <input matInput autocomplete="off">
+            <input matInput autocomplete="off" />
           </mat-form-field>
         </div>
       </div>
-
-
     </form>
-
   </div>
-<!-- RIGHT COLUMN -->
+  <!-- RIGHT COLUMN -->
   <div class="col-preview">
+    <div class="post"></div>
 
-    <div class="post">
-    </div>
-
-    <div class="post"> 
-    </div>
+    <div class="post"></div>
 
     <button mat-raised-button>Stage Post</button>
-
   </div>
-
 </div>

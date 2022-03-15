@@ -7,6 +7,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
 // import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 
@@ -35,6 +37,7 @@ export const adminNgnuggetsPostsRoutes: Route[] = [
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     AngularFireStorageModule,
   ],
   declarations: [AddPostComponent],
