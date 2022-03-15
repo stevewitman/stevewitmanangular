@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'admin-ngnuggets-feat-shell',
-  preset: '../../../jest.preset.js',
+  displayName: 'admin-ngnuggets-shell-shell',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/admin-ngnuggets/feat-shell',
+  coverageDirectory: '../../../../coverage/libs/admin-ngnuggets/shell/shell',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

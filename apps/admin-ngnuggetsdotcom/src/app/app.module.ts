@@ -11,7 +11,7 @@ import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AdminNgnuggetsFeatShellModule } from '@stevewitmanangular/admin-ngnuggets/feat-shell';
+import { AdminNgnuggetsShellModule } from '@stevewitmanangular/admin-ngnuggets/shell/feature';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +19,7 @@ import { AdminNgnuggetsFeatShellModule } from '@stevewitmanangular/admin-ngnugge
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AdminNgnuggetsFeatShellModule,
+    AdminNgnuggetsShellModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),

@@ -8,10 +8,12 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { getDownloadURL, uploadBytes } from 'firebase/storage';
+
+import tags from './tags.json';
 export interface Tag {
   category: string;
-  tag: string;
-  alt: string;
+  tag: string;  
+  alt: string;  
 }
 @Component({
   selector: 'admin-ngnuggets-add-post',
@@ -25,21 +27,14 @@ export class AddPostComponent implements OnInit {
   tagsCtrl = new FormControl();
   filteredTags: Observable<string[]>;
   tags: string[] = [];
-  allTags: string[] = [
-    'AOT',
-    'Angular Universal',
-    'Angular Workspace',
-    'CLI',
-    'Change Detection',
-    'Components',
-    'Component Factory',
-  ];
+  allTags: string[] = [];
 
   slug = '2022-01-28-B';
 
   @ViewChild('tagsInput') tagsInput?: ElementRef<HTMLInputElement>;
 
   constructor(private fb: FormBuilder, private storage: Storage) {
+    this.allTags = this.getTags();
     this.filteredTags = this.tagsCtrl.valueChanges.pipe(
       startWith(''),
       map((tags) => (tags ? this._filterTags(tags) : this.tags.slice()))
@@ -48,6 +43,15 @@ export class AddPostComponent implements OnInit {
 
   ngOnInit() {
     this.initializeForm();
+    
+  }
+
+  getTags() {
+    const newArray = tags.map(el => {
+      return el.tag;
+    });
+    newArray.sort()
+    return newArray
   }
 
   initializeForm(): void {

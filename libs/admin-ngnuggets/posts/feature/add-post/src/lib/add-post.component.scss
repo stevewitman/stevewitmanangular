@@ -156,3 +156,7 @@ input.mat-input-element {
   background-color: #F8F8F8;
   border: 1px solid #DDD;
 }
+
+::ng-deep .mat-autocomplete-panel {
+ max-height: 580px !important; 
+}

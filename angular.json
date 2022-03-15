@@ -1,7 +1,6 @@
 {
   "version": 1,
   "projects": {
-
     "admin-ngnuggets-feat-shell": {
       "projectType": "library",
       "root": "libs/admin-ngnuggets/feat-shell",
@@ -48,6 +47,32 @@
             "lintFilePatterns": [
               "libs/admin-ngnuggets/posts/feature/add-post/src/**/*.ts",
               "libs/admin-ngnuggets/posts/feature/add-post/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "admin-ngnuggets-shell-shell": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/shell/shell",
+      "sourceRoot": "libs/admin-ngnuggets/shell/shell/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/admin-ngnuggets/shell/shell"],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/shell/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/shell/shell/src/**/*.ts",
+              "libs/admin-ngnuggets/shell/shell/src/**/*.html"
             ]
           }
         }

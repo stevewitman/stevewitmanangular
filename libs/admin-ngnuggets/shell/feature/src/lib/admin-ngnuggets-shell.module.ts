@@ -23,4 +23,4 @@ import { MatMenuModule } from '@angular/material/menu';
   declarations: [MainNavComponent],
   exports: [MainNavComponent],
 })
-export class AdminNgnuggetsFeatShellModule {}
+export class AdminNgnuggetsShellModule {}

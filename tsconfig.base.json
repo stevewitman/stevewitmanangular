@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -23,6 +25,9 @@
       ],
       "@stevewitmanangular/admin-ngnuggets/posts/feature/add-post": [
         "libs/admin-ngnuggets/posts/feature/add-post/src/index.ts"
+      ],
+      "@stevewitmanangular/admin-ngnuggets/shell/feature": [
+        "libs/admin-ngnuggets/shell/feature/src/index.ts"
       ],
       "@stevewitmanangular/ngnuggets/home": [
         "libs/ngnuggets/home/feature/src/index.ts"
