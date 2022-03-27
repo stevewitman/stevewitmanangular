@@ -80,19 +80,19 @@
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>datePosted</mat-label>
-            <input matInput autocomplete="off" />
+            <input matInput autocomplete="off" formControlName="datePostedCtrl" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
-            <mat-label>dateCreated</mat-label>
-            <input matInput autocomplete="off" />
+            <mat-label>dateSource</mat-label>
+            <input matInput autocomplete="off" formControlName="dateSourceCtrl" />
           </mat-form-field>
           <div class="full-buttons">
-            <button mat-stroked-button class="full-height-button">
+            <button mat-stroked-button class="full-height-button" (click)="changeSourceDate(-1)">
               <mat-icon class="full-height-icon">arrow_left</mat-icon>
             </button>
-            <button mat-stroked-button class="full-height-button">
+            <button mat-stroked-button class="full-height-button" (click)="changeSourceDate(1)">
               <mat-icon class="full-height-icon">arrow_right</mat-icon>
             </button>
           </div>
@@ -122,13 +122,13 @@
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>sourceSite</mat-label>
-            <input matInput autocomplete="off" />
+            <input matInput autocomplete="off" formControlName="sourceSiteCtrl"/>
           </mat-form-field>
         </div>
         <div class="form-cell-1-3">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>sourceUrl</mat-label>
-            <input matInput autocomplete="off" />
+            <input matInput autocomplete="off" formControlName="sourceUrlCtrl"/>
           </mat-form-field>
         </div>
         <div class="form-cell-1-3">
