@@ -27,6 +27,114 @@
       },
       "tags": []
     },
+    "admin-ngnuggets-posts-data-access-models": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/posts/data-access/models",
+      "sourceRoot": "libs/admin-ngnuggets/posts/data-access/models/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/admin-ngnuggets/posts/data-access/models"],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/posts/data-access/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/posts/data-access/models/src/**/*.ts",
+              "libs/admin-ngnuggets/posts/data-access/models/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "admin-ngnuggets-posts-data-access-posts": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/posts/data-access/posts",
+      "sourceRoot": "libs/admin-ngnuggets/posts/data-access/posts/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/admin-ngnuggets/posts/data-access/posts"],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/posts/data-access/posts/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/posts/data-access/posts/src/**/*.ts",
+              "libs/admin-ngnuggets/posts/data-access/posts/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "admin-ngnuggets-posts-data-access-services": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/posts/data-access/services",
+      "sourceRoot": "libs/admin-ngnuggets/posts/data-access/services/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/admin-ngnuggets/posts/data-access/services"
+          ],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/posts/data-access/services/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/posts/data-access/services/src/**/*.ts",
+              "libs/admin-ngnuggets/posts/data-access/services/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "admin-ngnuggets-posts-data-access-sources": {
+      "projectType": "library",
+      "root": "libs/admin-ngnuggets/posts/data-access/sources",
+      "sourceRoot": "libs/admin-ngnuggets/posts/data-access/sources/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/admin-ngnuggets/posts/data-access/sources"
+          ],
+          "options": {
+            "jestConfig": "libs/admin-ngnuggets/posts/data-access/sources/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin-ngnuggets/posts/data-access/sources/src/**/*.ts",
+              "libs/admin-ngnuggets/posts/data-access/sources/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "admin-ngnuggets-posts-feature-add-post": {
       "projectType": "library",
       "root": "libs/admin-ngnuggets/posts/feature/add-post",

@@ -11,6 +11,7 @@ import { ref, Storage } from '@angular/fire//storage';
 import { getDownloadURL, uploadBytes } from 'firebase/storage';
 
 import tagsData from './tags.json';
+
 export interface Tag {
   category: string;
   tag: string;  
@@ -35,6 +36,7 @@ export class AddPostComponent implements OnInit {
   tagsAll: string[] = [];
   tagsFiltered: Observable<string[]> = of([]);
   tagsSelected: string[] = [];
+  retrieved: any;
 
   postTypes = [
     { value: 'blog' },
@@ -48,10 +50,13 @@ export class AddPostComponent implements OnInit {
 
   @ViewChild('tagsInput') tagsInput?: ElementRef<HTMLInputElement>;
 
-  constructor(private formBuilder: FormBuilder, private storage: Storage) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private storage: Storage,
+  ) {}
 
   ngOnInit() {
-    this.todaysDate = new Date();    
+    this.todaysDate = new Date();
     this.currSourceDate = this.todaysDate;
     this.initializeForm();
     this.tagsAll = this.getTags();
@@ -74,12 +79,11 @@ export class AddPostComponent implements OnInit {
   }
 
   changeSourceDate(value: number) {
-    this.currSourceDate.setDate(this.currSourceDate.getDate() + value );
+    this.currSourceDate.setDate(this.currSourceDate.getDate() + value);
     this.postForm.controls['dateSourceCtrl'].setValue(
       this.currSourceDate.toISOString().split('T')[0]
     );
   }
-
 
   getTags() {
     const newArray = tagsData.map((el) => {
@@ -153,7 +157,7 @@ export class AddPostComponent implements OnInit {
         'https://dev.to/search?q=angular&sort_by=published_at&sort_direction=desc'
       );
       // [blog] Medium
-    } else if (currUrl.indexOf('https://medium.com/') !== -1) {
+    } else if (currUrl.indexOf('medium.com/') !== -1) {
       this.postForm.controls['typeCtrl'].setValue('blog');
       this.postForm.controls['sourceSiteCtrl'].setValue('Medium');
       this.postForm.controls['sourceUrlCtrl'].setValue(
@@ -209,6 +213,7 @@ export class AddPostComponent implements OnInit {
       );
     }
   }
+
 
   private _filterTags(value: string): string[] {
     const filterValue = value.toLowerCase();

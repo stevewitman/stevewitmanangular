@@ -1,8 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -20,8 +20,20 @@
       "@stevewitmanangular/admin-ngnuggets/feat-shell": [
         "libs/admin-ngnuggets/feat-shell/src/index.ts"
       ],
-      "@stevewitmanangular/admin-ngnuggets/home": [
+      "@stevewitmanangular/admin-ngnuggets/home": [   
         "libs/admin-ngnuggets/home/feature/src/index.ts"
+      ],
+      "@stevewitmanangular/admin-ngnuggets/posts/data-access/models": [
+        "libs/admin-ngnuggets/posts/data-access/models/src/index.ts"
+      ],
+      "@stevewitmanangular/admin-ngnuggets/posts/data-access/posts": [
+        "libs/admin-ngnuggets/posts/data-access/posts/src/index.ts"
+      ],
+      "@stevewitmanangular/admin-ngnuggets/posts/data-access/services": [
+        "libs/admin-ngnuggets/posts/data-access/services/src/index.ts"
+      ],
+      "@stevewitmanangular/admin-ngnuggets/posts/data-access/sources": [
+        "libs/admin-ngnuggets/posts/data-access/sources/src/index.ts"
       ],
       "@stevewitmanangular/admin-ngnuggets/posts/feature/add-post": [
         "libs/admin-ngnuggets/posts/feature/add-post/src/index.ts"

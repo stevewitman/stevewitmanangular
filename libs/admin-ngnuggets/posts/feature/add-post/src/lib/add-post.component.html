@@ -1,6 +1,6 @@
 <div class="component-container">
   <div class="col-form">
-    <form class="example-form" [formGroup]="postForm">
+    <form [formGroup]="postForm">
       <div class="form-row">
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
@@ -226,25 +226,25 @@
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Status</mat-label>
-            <input matInput autocomplete="off" />
+            <input matInput autocomplete="off" disabled="true" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Visits</mat-label>
-            <input matInput autocomplete="off" />
+            <input matInput autocomplete="off" disabled="true" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Likes</mat-label>
-            <input matInput autocomplete="off" />
+            <input matInput autocomplete="off" disabled="true" />
           </mat-form-field>
         </div>
         <div class="form-cell-1-4">
           <mat-form-field class="input-full-width" appearance="fill">
             <mat-label>Newsletter Status</mat-label>
-            <input matInput autocomplete="off" />
+            <input matInput autocomplete="off" disabled="true" />
           </mat-form-field>
         </div>
       </div>
@@ -256,6 +256,7 @@
 
     <div class="post"></div>
 
-    <button mat-raised-button>Stage Post</button>
+
+    <pre> {{ retrieved | async | json}}</pre>
   </div>
 </div>
