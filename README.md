@@ -1,3 +1,9 @@
+# Steve's Notes
+
+see https://www.youtube.com/watch?v=s37Gu4z878I for (grouping folders / Nx libs) structure 
+
+2022-04-18 generated stevewitman/home/feature lib and stevewitman/shell/feature lib (grouping folders / Nx libs) structure from https://www.youtube.com/watch?v=s37Gu4z878I ... may need to update ngnuggets and admin-ngnuggets to be consistent with this structure. 
+
 
 
 # Stevewitmanangular

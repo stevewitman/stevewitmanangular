@@ -542,6 +542,181 @@
         }
       },
       "tags": []
+    },
+    "stevewitman-home-feature": {
+      "projectType": "library",
+      "root": "libs/stevewitman/home/feature",
+      "sourceRoot": "libs/stevewitman/home/feature/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/stevewitman/home/feature"],
+          "options": {
+            "jestConfig": "libs/stevewitman/home/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/stevewitman/home/feature/src/**/*.ts",
+              "libs/stevewitman/home/feature/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "stevewitman-shell-feature": {
+      "projectType": "library",
+      "root": "libs/stevewitman/shell/feature",
+      "sourceRoot": "libs/stevewitman/shell/feature/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/stevewitman/shell/feature"],
+          "options": {
+            "jestConfig": "libs/stevewitman/shell/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/stevewitman/shell/feature/src/**/*.ts",
+              "libs/stevewitman/shell/feature/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "stevewitmandotcom": {
+      "projectType": "application",
+      "root": "apps/stevewitmandotcom",
+      "sourceRoot": "apps/stevewitmandotcom/src",
+      "prefix": "sw",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/stevewitmandotcom",
+            "index": "apps/stevewitmandotcom/src/index.html",
+            "main": "apps/stevewitmandotcom/src/main.ts",
+            "polyfills": "apps/stevewitmandotcom/src/polyfills.ts",
+            "tsConfig": "apps/stevewitmandotcom/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/stevewitmandotcom/src/favicon.ico",
+              "apps/stevewitmandotcom/src/assets"
+            ],
+            "styles": ["apps/stevewitmandotcom/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/stevewitmandotcom/src/environments/environment.ts",
+                  "with": "apps/stevewitmandotcom/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "stevewitmandotcom:build:production"
+            },
+            "development": {
+              "browserTarget": "stevewitmandotcom:build:development",
+              "port": 4202
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "stevewitmandotcom:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/stevewitmandotcom/src/**/*.ts",
+              "apps/stevewitmandotcom/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/stevewitmandotcom"],
+          "options": {
+            "jestConfig": "apps/stevewitmandotcom/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "stevewitmandotcom-e2e": {
+      "root": "apps/stevewitmandotcom-e2e",
+      "sourceRoot": "apps/stevewitmandotcom-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/stevewitmandotcom-e2e/cypress.json",
+            "devServerTarget": "stevewitmandotcom:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "stevewitmandotcom:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/stevewitmandotcom-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["stevewitmandotcom"]
     }
   }
 }

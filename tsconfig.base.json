@@ -20,7 +20,7 @@
       "@stevewitmanangular/admin-ngnuggets/feat-shell": [
         "libs/admin-ngnuggets/feat-shell/src/index.ts"
       ],
-      "@stevewitmanangular/admin-ngnuggets/home": [   
+      "@stevewitmanangular/admin-ngnuggets/home": [
         "libs/admin-ngnuggets/home/feature/src/index.ts"
       ],
       "@stevewitmanangular/admin-ngnuggets/posts/data-access/models": [
@@ -55,6 +55,12 @@
       ],
       "@stevewitmanangular/shared/ui/material": [
         "libs/shared/ui/material/src/index.ts"
+      ],
+      "@stevewitmanangular/stevewitman/home/feature": [
+        "libs/stevewitman/home/feature/src/index.ts"
+      ],
+      "@stevewitmanangular/stevewitman/shell/feature": [
+        "libs/stevewitman/shell/feature/src/index.ts"
       ]
     }
   },
