@@ -9,14 +9,14 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     data: {
-      title: 'A-ngNug: Home',
+      title: 'Admin: Home',
     },
   },
   {
     path: 'posts',
     loadChildren: () => AddPostModule,
     data: {
-      title: 'A-ngNug: Posts',
+      title: 'Admin: Posts',
     },
   },
 ];
@@ -30,4 +30,5 @@ const routes: Routes = [
 
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AdminNgnuggetsShellRoutingModule {}
+
