@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
-import { MainNavComponent } from './main-nav/main-nav.component';
 import { SharedUiMaterialModule } from '@stevewitmanangular/shared/ui/material';
+import { NgnuggetsShellRoutingModule } from './ngnuggets-shell-routing.module';
 import { SharedUiAuthStatusModule } from '@stevewitmanangular/shared/ui/auth-status';
+import { MainNavComponent } from './main-nav/main-nav.component';
+
 
 @NgModule({
   imports: [
-    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
+    NgnuggetsShellRoutingModule,
     SharedUiMaterialModule,
     SharedUiAuthStatusModule,
   ],

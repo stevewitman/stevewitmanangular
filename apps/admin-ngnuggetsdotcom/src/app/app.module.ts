@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -15,7 +15,7 @@ import { AdminNgnuggetsShellModule } from '@stevewitmanangular/admin-ngnuggets/s
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    RouterModule,
+    // RouterModule,
     AdminNgnuggetsShellModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),

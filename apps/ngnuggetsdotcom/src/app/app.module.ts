@@ -6,7 +6,6 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 
 import { environment } from '../environments/environment';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgnuggetsShellModule } from '@stevewitmanangular/ngnuggets/shell';
@@ -16,7 +15,6 @@ import { NgnuggetsShellModule } from '@stevewitmanangular/ngnuggets/shell';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     NgnuggetsShellModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
