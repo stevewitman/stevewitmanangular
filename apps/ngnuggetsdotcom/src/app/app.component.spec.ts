@@ -14,11 +14,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ngnuggetsdotcom'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngnuggetsdotcom');
-  });
+  // it(`should have as title 'ngnuggetsdotcom'`, () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.componentInstance;
+  //   expect(app.title).toEqual('ngnuggetsdotcom');
+  // });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);

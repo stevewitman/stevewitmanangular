@@ -5,7 +5,7 @@
       "projectType": "library",
       "root": "libs/admin-ngnuggets/feat-shell",
       "sourceRoot": "libs/admin-ngnuggets/feat-shell/src",
-      "prefix": "ngnuggets",
+      "prefix": "stevewitmanangular",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -191,7 +191,7 @@
       "projectType": "application",
       "root": "apps/admin-ngnuggetsdotcom",
       "sourceRoot": "apps/admin-ngnuggetsdotcom/src",
-      "prefix": "admin-ngnuggets",
+      "prefix": "stevewitmanangular",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -317,7 +317,7 @@
       "projectType": "library",
       "root": "libs/ngnuggets/feat-shell",
       "sourceRoot": "libs/ngnuggets/feat-shell/src",
-      "prefix": "ngnuggets",
+      "prefix": "stevewitmanangular",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -343,7 +343,7 @@
       "projectType": "application",
       "root": "apps/ngnuggetsdotcom",
       "sourceRoot": "apps/ngnuggetsdotcom/src",
-      "prefix": "ngnuggets",
+      "prefix": "stevewitmanangular",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -495,7 +495,7 @@
       "projectType": "library",
       "root": "libs/shared/ui/material",
       "sourceRoot": "libs/shared/ui/material/src",
-      "prefix": "shared-stevewitmanangular",
+      "prefix": "stevewitmanangular",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -599,7 +599,7 @@
       "projectType": "application",
       "root": "apps/stevewitmandotcom",
       "sourceRoot": "apps/stevewitmandotcom/src",
-      "prefix": "sw",
+      "prefix": "stevewitmanangular",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -615,7 +615,10 @@
               "apps/stevewitmandotcom/src/favicon.ico",
               "apps/stevewitmandotcom/src/assets"
             ],
-            "styles": ["apps/stevewitmandotcom/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/stevewitmandotcom/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {

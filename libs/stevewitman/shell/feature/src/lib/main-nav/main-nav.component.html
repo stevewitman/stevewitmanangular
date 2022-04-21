@@ -20,18 +20,15 @@
       <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
     </button>
   </ng-container>
-  <a [routerLink]="['/']">
-    <img src="./assets/images/ngnuggets-logo-toolbar-dark.png" class="ngnuggets-logo-toolbar">
-  </a>
   <span class="spacer"></span>
 
     <!-- AUTH -->
-  <stevewitmanangular-auth-status
+  <!-- <stevewitmanangular-auth-status
     [isHandset$]="isHandset$"
     [userAuthStatus$]="userAuthStatus$"
     (signInWithGoogle)="signInWithGoogle()"
     (signOutWithGoogle)="signOutWithGoogle()"
-  ></stevewitmanangular-auth-status>
+  ></stevewitmanangular-auth-status> -->
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
@@ -52,24 +49,36 @@
       >
       <a
         mat-list-item
-        [routerLink]="['/']"
-        (click)="onClickFilters()"
-        (click)="isHandset && !showFilters && drawer.close()"
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><mat-icon class="icon">library_books</mat-icon
+        ><span class="menu-item">Posts</span></a
       >
-        <mat-icon class="icon">filter_alt</mat-icon>
-        <span class="menu-item">Filter By</span>
-        <mat-icon class="menu-expand">expand_more</mat-icon></a
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><mat-icon class="icon">video_library </mat-icon
+        ><span class="menu-item">Videos</span></a
       >
-
-      <mat-nav-list class="sub-menu" *ngIf="showFilters" @staggerList>
-        <a mat-list-item><span class="menu-item">Hide Blogs</span></a>
-        <a mat-list-item><span class="menu-item">Hide Podcasts</span></a>
-        <a mat-list-item><span class="menu-item">Hide Releases</span></a>
-        <a mat-list-item><span class="menu-item">Hide Videos</span></a>
-      </mat-nav-list>
-
-      <hr />
-
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><mat-icon class="icon">folder_copy</mat-icon
+        ><span class="menu-item">Projects</span></a
+      >
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><mat-icon class="icon">mail</mat-icon
+        ><span class="menu-item">Contact</span></a
+      >
     </mat-nav-list>
   </mat-sidenav>
 

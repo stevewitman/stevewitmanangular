@@ -18,11 +18,11 @@ import {
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
-import { User } from '@angular/fire/auth';
+// import { User } from '@angular/fire/auth';
 import { Observable, of, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
-import { AuthService } from '@stevewitmanangular/shared/data-access/auth';
+// import { AuthService } from '@stevewitmanangular/shared/data-access/auth';
 
 @Component({
   selector: 'stevewitmanangular-main-nav',
@@ -82,35 +82,24 @@ export class MainNavComponent implements OnInit, AfterViewInit, OnDestroy {
       map((result) => result.matches),
       shareReplay()
     );
-  userAuthStatus$: Observable<User | null> = of(null);
-  isHandsetSubscription$: Subscription | null = null;
+  // userAuthStatus$: Observable<User | null> = of(null);
+  isHandsetSubscription$: Subscription| null = null;
 
   isHandset!: boolean;
-
-  showFilters = false;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
     private router: Router,
     private changeDetectorRef: ChangeDetectorRef,
-    private authService: AuthService
-  ) {
-    router.events.subscribe((e) => {
-      if (e instanceof NavigationEnd && location.pathname == '/') {
-        this.showFilters = true;
-      }
-      if (e instanceof NavigationEnd && location.pathname !== '/') {
-        this.showFilters = false;
-      }
-    });
-  }
+    // private authService: AuthService
+  ) {}
 
   ngOnInit() {
     // TODO handle subscription
     this.isHandsetSubscription$ = this.isHandset$.subscribe((value) => {
       this.isHandset = value;
     });
-    this.userAuthStatus$ = this.authService.getUserAuthState();
+    // this.userAuthStatus$ = this.authService.getUserAuthState();
   }
 
   ngAfterViewInit() {
@@ -118,7 +107,7 @@ export class MainNavComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.isHandsetSubscription$) {
+    if (this.isHandsetSubscription$)  {
       this.isHandsetSubscription$.unsubscribe();
     }
   }
@@ -131,15 +120,11 @@ export class MainNavComponent implements OnInit, AfterViewInit, OnDestroy {
     );
   }
 
-  onClickFilters() {
-    this.showFilters = !this.showFilters;
-  }
-
   signInWithGoogle() {
-    this.authService.signInWithGoogle();
+    // this.authService.signInWithGoogle();
   }
 
   signOutWithGoogle() {
-    this.authService.signOutWithGoogle();
+    // this.authService.signOutWithGoogle();
   }
 }

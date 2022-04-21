@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "admin-ngnuggets",
+            "prefix": "stevewitmanangular",
             "style": "kebab-case"
           }
         ]

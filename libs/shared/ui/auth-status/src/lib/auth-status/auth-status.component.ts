@@ -4,7 +4,7 @@ import { User } from '@angular/fire/auth';
 import { Observable, of } from 'rxjs';
 
 @Component({
-  selector: 'shared-auth-status',
+  selector: 'stevewitmanangular-auth-status',
   templateUrl: './auth-status.component.html',
   styleUrls: ['./auth-status.component.scss'],
 })

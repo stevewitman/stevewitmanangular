@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "adminNgnuggets",
+            "prefix": "stevewitmanangular",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "admin-ngnuggets",
+            "prefix": "stevewitmanangular",
             "style": "kebab-case"
           }
         ]
