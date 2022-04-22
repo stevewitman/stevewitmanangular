@@ -4,11 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [
-    HomePageComponent
-  ],
-  exports: [
-    HomePageComponent
-  ]
+  declarations: [HomePageComponent],
+  exports: [HomePageComponent],
 })
 export class StevewitmanHomeFeatureModule {}
