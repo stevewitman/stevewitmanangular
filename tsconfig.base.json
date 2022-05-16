@@ -56,6 +56,9 @@
       "@stevewitmanangular/shared/ui/material": [
         "libs/shared/ui/material/src/index.ts"
       ],
+      "@stevewitmanangular/shared/utility/date-functions": [
+        "libs/shared/utility/date-functions/src/index.ts"
+      ],
       "@stevewitmanangular/stevewitman/home/feature": [
         "libs/stevewitman/home/feature/src/index.ts"
       ],

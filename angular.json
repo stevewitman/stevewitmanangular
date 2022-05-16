@@ -1,4 +1,7 @@
 {
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "projects": {
     "admin-ngnuggets-feat-shell": {
@@ -537,6 +540,32 @@
             "lintFilePatterns": [
               "libs/shared/ui/auth/src/**/*.ts",
               "libs/shared/ui/auth/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-utility-date-functions": {
+      "projectType": "library",
+      "root": "libs/shared/utility/date-functions",
+      "sourceRoot": "libs/shared/utility/date-functions/src",
+      "prefix": "stevewitmanangular",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/utility/date-functions"],
+          "options": {
+            "jestConfig": "libs/shared/utility/date-functions/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/utility/date-functions/src/**/*.ts",
+              "libs/shared/utility/date-functions/src/**/*.html"
             ]
           }
         }
