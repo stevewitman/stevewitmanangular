@@ -5,8 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { SharedUiMaterialModule } from '@stevewitmanangular/shared/ui/material';
 import { StevewitmanShellRoutingModule } from './stevewitman-shell-routing.module';
+import { SharedUiAuthStatusModule } from '@stevewitmanangular/shared/ui/auth-status';
 import { MainNavComponent } from './main-nav/main-nav.component';
-
 
 @NgModule({
   imports: [
@@ -15,6 +15,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     RouterModule,
     StevewitmanShellRoutingModule,
     SharedUiMaterialModule,
+    SharedUiAuthStatusModule,
   ],
   declarations: [MainNavComponent],
   exports: [MainNavComponent],

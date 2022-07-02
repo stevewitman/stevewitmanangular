@@ -21,8 +21,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 // import { User } from '@angular/fire/auth';
 import { Observable, of, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { User } from '@angular/fire/auth';
 
-// import { AuthService } from '@stevewitmanangular/shared/data-access/auth';
+import { AuthService } from '@stevewitmanangular/shared/data-access/auth';
 
 @Component({
   selector: 'stevewitmanangular-main-nav',
@@ -82,7 +83,7 @@ export class MainNavComponent implements OnInit, AfterViewInit, OnDestroy {
       map((result) => result.matches),
       shareReplay()
     );
-  // userAuthStatus$: Observable<User | null> = of(null);
+  userAuthStatus$: Observable<User | null> = of(null);
   isHandsetSubscription$: Subscription| null = null;
 
   isHandset!: boolean;
@@ -91,7 +92,7 @@ export class MainNavComponent implements OnInit, AfterViewInit, OnDestroy {
     private breakpointObserver: BreakpointObserver,
     private router: Router,
     private changeDetectorRef: ChangeDetectorRef,
-    // private authService: AuthService
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -99,7 +100,7 @@ export class MainNavComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isHandsetSubscription$ = this.isHandset$.subscribe((value) => {
       this.isHandset = value;
     });
-    // this.userAuthStatus$ = this.authService.getUserAuthState();
+    this.userAuthStatus$ = this.authService.getUserAuthState();
   }
 
   ngAfterViewInit() {
@@ -121,10 +122,30 @@ export class MainNavComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   signInWithGoogle() {
-    // this.authService.signInWithGoogle();
+    this.authService
+      .signInWithGoogle()
+      .then(() => {
+        // Sign-out successful.
+        console.log('Signed In With Google');
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log('ERROR occurred while Signing In With Google...');
+        console.log('ERROR message:', error);
+      });;
   }
 
   signOutWithGoogle() {
-    // this.authService.signOutWithGoogle();
+    this.authService
+      .signOutWithGoogle()
+      .then(() => {
+        // Sign-out successful.
+        console.log('Signed Out With Google');
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log('ERROR occurred while Signing Out With Google...');
+        console.log('ERROR message:', error);
+      });
   }
 }
